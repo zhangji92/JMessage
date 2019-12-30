@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:background="@drawable/solid_ff_5"
+    android:orientation="vertical">
+
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="4dp"
+        android:background="@drawable/solid_2d_5" />
+
+    <TextView
+        android:id="@+id/jmui_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/resend_message"
+        android:textColor="@color/color_2c"
+        android:textSize="16.67sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="0dip"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/solid_ff_bottom_left_5dp"
+            android:text="@string/cancel"
+            android:textColor="@color/color_2c"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/resend_commit"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/solid_ff_bottom_right_5dp"
+            android:text="@string/resend_commit"
+            android:textColor="@color/color_2c"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

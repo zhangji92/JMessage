@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chat_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/chat_title_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_status_bar_white" />
+
+        <com.dome.push.view.RxTitle
+            android:id="@+id/chat_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:leftIconVisibility="true"
+            app:titleColor="@android:color/black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_back" />
+
+    </LinearLayout>
+
+    <com.dome.push.view.EmoticonsRelative
+        android:id="@+id/chat_emoticons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/chat_title_group"
+        android:background="@color/color_back">
+
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/chat_smart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_back"
+            app:srlEnableLoadMore="false">
+
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:id="@+id/chat_list_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/chat_record"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_back"
+                android:scrollbars="none" />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+    </com.dome.push.view.EmoticonsRelative>
+
+</RelativeLayout>

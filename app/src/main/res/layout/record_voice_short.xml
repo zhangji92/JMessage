@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="135dp"
+    android:layout_height="135dp"
+    android:layout_gravity="center"
+    android:alpha="0.5"
+    android:background="@android:color/black"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@string/app_log"
+        android:src="@mipmap/time_short" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="9dp"
+        android:text="@string/record_talk_short_time"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+</FrameLayout>

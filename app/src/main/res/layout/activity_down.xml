@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_status_bar_white" />
+
+    <com.dome.push.view.RxTitle
+        android:id="@+id/down_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftIconVisibility="true" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="84.67dp"
+        android:background="@mipmap/document" />
+
+    <TextView
+        android:id="@+id/down_file_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="14.33dp"
+        android:text="文件名"
+        android:textColor="#2C2C2C"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="7.67dp"
+        android:text="该文件不支持预览, 请下载原文件查看."
+        android:textColor="#999999" />
+
+    <Button
+        android:id="@+id/btn_down"
+        android:layout_width="225dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="38dp"
+        android:background="#2ECFCF"
+        android:text="下载"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/process_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="34.33dp"
+        android:text="下载中"
+        android:textColor="#999999"
+        android:textSize="10sp"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/down_process"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginLeft="38.6dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="56.33dp"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/progress_bg"
+        android:visibility="gone" />
+
+</LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/chat_send_layout">
+
+    <!--发送的时间-->
+    <include layout="@layout/chat_time" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/chat_avatar"
+            style="@style/chat_send_avatar_style"
+            android:contentDescription="@string/app_log" />
+
+        <TextView
+            android:id="@+id/chat_content"
+            style="@style/msg_text_style"
+            android:layout_toStartOf="@id/chat_avatar" />
+
+        <include
+            layout="@layout/send_hint_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/chat_content" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/chat_send_layout">
+
+    <!--发送的时间-->
+    <include layout="@layout/chat_time" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp">
+
+        <ImageView
+            android:id="@+id/chat_avatar"
+            style="@style/chat_send_avatar_style"
+            android:contentDescription="@string/app_log" />
+
+        <FrameLayout
+            android:id="@+id/chat_voice_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/chat_avatar">
+
+            <TextView
+                android:id="@+id/chat_content"
+                style="@style/msg_text_style" />
+
+            <ImageView
+                android:id="@+id/chat_voice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/voice_send"
+                android:contentDescription="@string/app_log" />
+
+
+            <TextView
+                android:id="@+id/chat_voice_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:text="@string/voice_length"
+                android:textColor="@color/color_4d"
+                android:textSize="16sp" />
+        </FrameLayout>
+
+
+        <include
+            layout="@layout/send_hint_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/chat_voice_group" />
+    </RelativeLayout>
+
+</LinearLayout>
