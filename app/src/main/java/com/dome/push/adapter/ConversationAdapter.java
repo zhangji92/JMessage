@@ -28,8 +28,8 @@ import cn.jpush.im.android.api.model.Conversation;
 public class ConversationAdapter extends RecyclerView.Adapter<ConversationHolder> {
 
     private List<Conversation> conversations;
-    private ConversationHolder conversationHolder=null;
     private IOnClickListener clickListener;
+
     public ConversationAdapter(List<Conversation> conversations) {
         this.conversations = conversations;
     }
@@ -37,10 +37,7 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationHolder
     @NonNull
     @Override
     public ConversationHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if (conversationHolder == null) {
-            conversationHolder = new ConversationHolder(parent, R.layout.adapter_conversation);
-        }
-        return conversationHolder;
+        return new ConversationHolder(parent, R.layout.adapter_conversation);
     }
 
     @Override
@@ -61,10 +58,6 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationHolder
     public void setConversations(List<Conversation> conversations) {
         this.conversations = conversations;
         notifyDataSetChanged();
-    }
-
-    public void setUnReadMsgCnt(int num) {
-        conversationHolder.getConversationNum().setText(String.valueOf(num));
     }
 
     public void setClickListener(IOnClickListener clickListener) {
