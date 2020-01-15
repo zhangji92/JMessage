@@ -8,6 +8,7 @@ import com.dome.push.R;
 import com.dome.push.base.BasePresenter;
 import com.dome.push.fragment.HomeFragment;
 import com.dome.push.fragment.MyFragment;
+import com.dome.push.fragment.PictureFragment;
 import com.dome.push.listener.TabSelectedListener;
 import com.dome.push.mvp.view.IMainView;
 import com.google.android.material.tabs.TabLayout;
@@ -32,6 +33,8 @@ public class MainPresenter extends BasePresenter<IMainView> {
     private Fragment currentFragment;
     // 首页
     private HomeFragment homeFragment;
+
+    private PictureFragment pictureFragment;
     // 我的
     private MyFragment myFragment;
 
@@ -57,7 +60,7 @@ public class MainPresenter extends BasePresenter<IMainView> {
         TabLayout tab = getView().getTab();
         // 添加 控件内容
         tab.addTab(tab.newTab().setText("首页"), true);
-        tab.addTab(tab.newTab().setText("测试"));
+        tab.addTab(tab.newTab().setText("图片选择器"));
         tab.addTab(tab.newTab().setText("购物车"));
         tab.addTab(tab.newTab().setText("我的"));
         // 显示首页
@@ -71,6 +74,7 @@ public class MainPresenter extends BasePresenter<IMainView> {
                         displayHome();
                         break;
                     case 1:
+                        displayPicture();
                         break;
                     case 2:
                         break;
@@ -94,6 +98,7 @@ public class MainPresenter extends BasePresenter<IMainView> {
         // 切换到 homeFragment
         switchFragment(this.homeFragment).commit();
     }
+
     /**
      * 显示我的
      */
@@ -107,6 +112,15 @@ public class MainPresenter extends BasePresenter<IMainView> {
         switchFragment(this.myFragment).commit();
     }
 
+    /**
+     * 显示图片
+     */
+    private void displayPicture() {
+        if (this.pictureFragment == null) {
+            this.pictureFragment = PictureFragment.newInstance();
+        }
+        switchFragment(this.pictureFragment).commit();
+    }
 
     /**
      * 切换fragment

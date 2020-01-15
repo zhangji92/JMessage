@@ -66,6 +66,8 @@ public class ChatActivity extends BaseActivity<ChatPresenter> implements IChatVi
     protected void initData() {
         presenter.init();
 
+
+
         smartRefreshLayout.setOnRefreshListener(refreshLayout -> {
             smartRefreshLayout.finishRefresh();
             presenter.getAdapter().dropDownToRefresh();
